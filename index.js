@@ -3,7 +3,7 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const path = require('path')
 const hbs = require('hbs')
-const Bin = require('./schemas/binSchema')
+const Bin = require('./schemas/BinSchema')
 
 require('./db.js')
 
