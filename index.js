@@ -13,13 +13,14 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 app.use(express.static(path.join(__dirname, 'public')))
 
-
-app.get('/', function(req, res){
-    res.render('home', {text:''})
+app.get('/favicon.ico', (req, res) => res.status(204));
+app.get('/', (req, res)=>{
+    return res.render('home', {text:''})
 })
 
-app.get('/:id', async function(req, res){
-    const bin = await Bin.findById(req.params.id).catch((e)=>console.log('error'))
+app.get('/:id', async (req, res)=>{
+    if (!req.params.id) return res.redirect('/')
+    const bin = await Bin.findById(req.params.id).catch((e)=>console.log(e))
     if (!bin) {
         res.redirect('/')
         return

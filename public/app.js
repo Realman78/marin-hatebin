@@ -41,5 +41,6 @@ function updateBin(body){
         body: JSON.stringify(body)
     }).then((res)=>{
         alert('successfully updated')
+        button.disabled = false
     })
 }

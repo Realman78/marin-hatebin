@@ -5,13 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
     <title>Document</title>
 </head>
 
 <body>
     <h1>{{err}}</h1>
-    <textarea name="" id="mainTA" cols="120" rows="40">{{text}}</textarea>
-    <button id="saveButton">Save!</button>
+    <div class="wrapper">
+        <div class="toolbar">
+            <button id="saveButton">
+                <i class="fas fa-save"></i>
+            </button>
+        </div>
+        <div class="mainarea">
+            <textarea class="heok" name="" id="mainTA" cols="120" rows="40">{{text}}</textarea>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/85404227e2.js" crossorigin="anonymous"></script>
+
     <script src="/app.js"></script>
 </body>
 
